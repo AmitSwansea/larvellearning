@@ -21,6 +21,7 @@
     
 {{Form ::submit('Edit',['class'=>'btn btn-primary btn-block'])}}
 
+{!! Form::close()!!}
 </div>
 
 

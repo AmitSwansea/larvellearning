@@ -4,17 +4,12 @@
 
 @section('content')
 
-
-
-
 <a class="navbar-brand" href="#">Welcome {{Auth::user()->name}}</a>
 <div class="row">
         <div class="col-md-10">
             <h1>All posts</h1>
         <div>
-
-
-        <div class="col-md-2">
+             <div class="col-md-2">
             <a href="{{ route('posts.create') }}" class="btn btn-lg btn-block btn-primary">Create NewPost</a>
         </div>    
 </div>
