@@ -56,29 +56,11 @@
 
       <div class="jumbotron">
       <h1 class="display-4">Welcome to my blog!!!</h1>
-      <p class="lead">Popular Blog</p>
-      <hr class="my-4">
-      <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </p>
-      </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-12">
-        <div class="post">
-        <h3>Post1</h3>
-        <p>This is post 1</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </div>
-        <hr>
-        <div class="post">
-        <h3>Post2</h3>
-        <p>This is post 2</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </div>
-  </div>
+      <p class="lead">Please Login to continue</p>
+     
 </div>
+
+
 
   
     <!-- Optional JavaScript; choose one of the two! -->

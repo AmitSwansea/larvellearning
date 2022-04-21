@@ -51,13 +51,12 @@ class PostController extends Controller
         $post->title=$request->title;
         $post->body=$request->body;
 
-        if($request->hasFile('image_path')){
-            $image_path=$request->file('image_path');
-            $filename=time() .'.' . $image_path->getClientOriginalExtension();
-            $location=public_path('images/'.$filename);
-            Image:make($image_path)->resize(800,400)->save($location);
-
-            $post->image_path=$filename;
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $extenstion = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extenstion;
+            $file->move('public/images/', $filename);
+            $post->image_path = $filename;
 
         }
         
@@ -115,7 +114,7 @@ class PostController extends Controller
         $post->save();
 
         Session::flash('success','This post was saved.');
-        return redirect()->route('post.show',$post->id);
+        return redirect('/posts');
     }
 
     /**
@@ -126,6 +125,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        $post=POST::find($id);
+
+        $post->delete();
+        return redirect('/posts');
         //
     }
 }

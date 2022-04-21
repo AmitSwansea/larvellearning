@@ -25,7 +25,7 @@ return new class extends Migration
             
         });
 
-        Schema::table('comment', function($table){
+        Schema::table('comments', function($table){
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }

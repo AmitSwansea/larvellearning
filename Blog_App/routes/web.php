@@ -23,6 +23,8 @@ Route::get('about', 'App\Http\Controllers\PagesController@getAbout');
 Route::get('/', 'App\Http\Controllers\PagesController@getIndex');
 Route::resource('posts','App\Http\Controllers\PostController');
 
+
+
 Route::post('comments/{post_id}',['uses'=>'App\Http\Controllers\CommentsController@store','as'=>'comments.store']);
 
 Route::get('/dashboard', function () {
@@ -30,3 +32,4 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+

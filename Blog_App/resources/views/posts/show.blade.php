@@ -1,5 +1,7 @@
 @extends('main')
 
+<?php $titleTag=htmlspecialchars($post->title); ?>
+
 @section('title','|View Post')
 
 @section('content')
@@ -7,6 +9,7 @@
 <h1>{{$post->title}}<h1>
 <div class="row">
 <p class='lead'>{{$post->body}}</p>
+<img src="{{asset('public/images/'.$post->image_path)}}" width="70px" height="70px">
 <div class="div">
         <div class="col-sm-7">
 
@@ -40,8 +43,12 @@
         </div>
         <div class="col-md-12">
         {{Form ::label('comment',"Comment:")}}
-                {{Form::text('comment',null,['class'=>'form-control'])}}
-        {{Form::submit('Add comment',['class'=>'btn btn-primary btn-block'])}}
+                {{Form::textarea('comment',null,['class'=>'form-control'])}}
+        `
+
+
+        {{Form ::submit('Add comment',array('class'=>'btn btn-success btn-lg','style'=>'margin-top: 20px;'))}}
+           
 
         </div>
         {{Form::close()}}

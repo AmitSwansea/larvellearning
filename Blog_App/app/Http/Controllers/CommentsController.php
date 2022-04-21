@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Post;
 
+use Session;
+
 class CommentsController extends Controller
 {
     /**
@@ -46,13 +48,13 @@ class CommentsController extends Controller
             $post=Post::find($post_id);
             $comment=new Comment();
             $comment->name=$request->name;
-            $comment->emailid=$request->emailid;
+            $comment->email=$request->emailid;
             $comment->comment=$request->comment;
             $comment->approved=true;
             $comment->post()->associate($post);
             $comment->save();
-            //Session::flash('success','Comment was added');
-            //return redirect()->route(['blog.single',[$post->id] );
+            Session::flash('success','Comment was added');
+           return redirect()->route('blog.single',[$post->slug] );
     }
 
     /**

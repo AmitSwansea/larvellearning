@@ -6,6 +6,7 @@
 
 
 {!! Form::model($post,['route'=>['posts.update', $post->id]]) !!}
+@method('PUT')
                 {{Form ::label('title','Title:')}}
 
              
@@ -24,9 +25,9 @@
 
 
 <div class="col-sm-2">
-{!!Html::linkRoute('posts.destroy','Delete',array($post->id),array('class'=>'btn btn-primary btn-block'))!!}
-
-               
+{!! Form::open(['route'=>['posts.destroy',$post->id],'method'=>'DELETE'])!!}
+{!! Form::submit('Delete', ['class'=>'btn btn-primary btn-block'])!!} 
+{!! Form::close() !!}              
 </div>
 
 </div>

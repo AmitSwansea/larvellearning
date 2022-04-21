@@ -20,8 +20,8 @@ Errors:
             <hr>
             {!! Form::open(array('route' => 'posts.store','files'=>'true')) !!}
                 {{Form ::label('title','Title:')}}
-                {{Form ::label('image_path','upload image')}}
-                {{Form::file('image')}}
+                <label for="">Upload Image</label>
+                <input type="file" name="image" required class="course form-control">
              
                 {{Form ::text('title',null,array('class'=>'form-control'))}}
                 {{Form ::label('body',"Post Body:")}}
